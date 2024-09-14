@@ -65,7 +65,7 @@ DSN 모델에서의 추론은 다음과 같이 주어짐
 
 - 학습 목표는 다음 Loss를 최소화
 
-	$L = L_{task} + \alpha L_{recon} + \beta L_{difference} + \gamma L_{similarity}$
+$L = L_{task} + \alpha L_{recon} + \beta L_{difference} + \gamma L_{similarity}$
 
 -  $\alpha$, $\beta$, $\gamma$는 Loss 항목 간의 trade-off para
  
