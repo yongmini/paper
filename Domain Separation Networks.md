@@ -76,9 +76,8 @@ $L = L_{task} + \alpha L_{recon} + \beta L_{difference} + \gamma L_{similarity}$
 - Source Domain의 각 샘플에 대해 실제 클래스의 Negative Log-Likelihood를 최소화
 
 	$L_{task} = - \sum y_{si} \cdot \log (\hat{y}_{si})$
+- $y_{si}$ 는 Source Domain 입력 $x_{si}$ 에 대한 클래스 레이블의 One-Hot Encoding 이고, $\hat{y}_{si}$ 는 모델의 Softmax 예측 $\hat{y}_{si} = G(E_c(x_{si}))$.
 
--  $y_{si}$는 Source Domain 입력 $i$에 대한 클래스 레이블의 One-Hot Encoding이고, $\hat{y}_{si}$는 모델의 Softmax 예측
-	$\hat{y}_{si} = G(E_c(x_{si}))$.
 	
 - Source 및 Target Domain 모두 적용되는 **Scale-Invariant Mean Squared Error (MSE)** 를 재구성 손실 $L_{recon}$으로 사용
 	$L_{recon} = \sum L_{si\_mse}(x_{si}, \hat{x}_{si}) + \sum L_{si\_mse}(x_{ti}, \hat{x}_{ti})$
