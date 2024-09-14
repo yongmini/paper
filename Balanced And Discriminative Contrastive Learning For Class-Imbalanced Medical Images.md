@@ -34,9 +34,7 @@ In _ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Sig
 
 - **Cross-Entropy Loss**와 비교할 때, **Supervised Contrastive Learning (SCL)**은  **Feature Space**에서 **Feature Distribution**의 균일성을 더욱 촉진하여, **Positive Sample Features**를 가깝게 모으고 **Negative Sample Features**를 멀리 밀어내는 데 더 유리하였음. **SCL**의 표현식은 다음과 같음:
 
-$$
-L_{SCL}(x_i) = -\frac{1}{|P(i)|} \sum_{p \in P(i)} \log\left(\frac{\exp(z_i \cdot z_p / \tau)}{\sum_{a \in A(i)} \exp(z_i \cdot z_a / \tau)}\right)
-$$
+$$L_{SCL}(x_i) = -\frac{1}{|P(i)|} \sum_{p \in P(i)} \log\left(\frac{\exp(z_i \cdot z_p / \tau)}{\sum_{a \in A(i)} \exp(z_i \cdot z_a / \tau)}\right)$$
 
 - 여기서, $z_i$는 $x_i$의 **Feature**를 나타내고, $A(i)$는 $z_i$를 제외한 현재 배치의 **Feature Set**을 나타냄. $P(i)$는 $x_i$와 동일한 **Label**을 가진 **Positive Sample**들의 집합임. $\tau$는 **Temperature Parameter**임
 
