@@ -42,17 +42,13 @@ $$L_{SCL}(x_i) = -\frac{1}{|P(i)|} \sum_{p \in P(i)} \log\left(\frac{\exp(z_i \c
 
 - **SCL**에서 **Temperature**가 **Negative Samples**에 대한 패널티 강도를 제어한다는 것을 **Gradient Analysis**를 통해 보여주었음 **Anchor Sample**인 $x_i$와 **Negative Sample**인 $z_p^-$의 유사성에 대한 **Gradient**는 다음과 같음:
 
-$$
-\frac{\partial L_{SCL}(x_i)}{\partial z_i \cdot z_p^-} = \frac{1}{\tau} \frac{\exp(z_i \cdot z_p^- / \tau)}{\sum_{a \in A(i)} \exp(z_i \cdot z_a / \tau)}
-$$
+$$\frac{\partial L_{SCL}(x_i)}{\partial z_i \cdot z_p^-} = \frac{1}{\tau} \frac{\exp(z_i \cdot z_p^- / \tau)}{\sum_{a \in A(i)} \exp(z_i \cdot z_a / \tau)}$$
 
 여기서, $P^-(i)$는 $x_i$와 다른 **Label**을 가진 **Negative Samples**들의 집합을 나타냄 **Negative Sample**의 상대적 패널티를 나타내기 위해 $r_i(z_i \cdot z_p^-)$를 정의하였음.
 
 훈련 과정에서 각 클래스의 **Temperature**를 동적으로 학습하였고, **SCL**의 **Gradient**는 다음과 같음:
 
-$$
-\frac{\partial L_{SCL}(x_i)}{\partial \tau'_{y_i}} = \frac{1}{|P(i)|} \sum_{p \in P(i)} \frac{(1 - s_{i,p})}{(\tau'_{y_i})^2}
-$$
+$$\frac{\partial L_{SCL}(x_i)}{\partial \tau'_{y_i}} = \frac{1}{|P(i)|} \sum_{p \in P(i)} \frac{(1 - s_{i,p})}{(\tau'_{y_i})^2}$$
 
 이 **Gradient**를 사용하여 클래스별 **Temperature**를 업데이트하였음**Negative Sample**이 **Anchor Sample**과 높은 유사성을 가질 경우, 해당 클래스의 **Temperature**를 줄여 **Negative Sample**에 대한 패널티 강도를 높였음
 
