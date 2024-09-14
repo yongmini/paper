@@ -81,7 +81,7 @@ $y_{si}$ 는 Source Domain 입력 $x_{si}$ 에 대한 클래스 레이블의 One
 
 Source 및 Target Domain 모두 적용되는 Scale-Invariant Mean Squared Error (MSE) 를 재구성 손실 $L_{recon}$ 으로 사용: 
 
-$L_{recon} = \sum L_{si\_mse}(x_{si}, \hat{x}_{si}) + \sum L_{si\_mse}(x_{ti}, \hat{x}_{ti})$
+$$L_{recon} = \sum L_{si\_mse}(x_{si}, \hat{x}_{si}) + \sum L_{si\_mse}(x_{ti}, \hat{x}_{ti})$$
 
 	
 - Source 및 Target Domain 모두 적용되는 **Scale-Invariant Mean Squared Error (MSE)** 를 재구성 손실 $L_{recon}$으로 사용
